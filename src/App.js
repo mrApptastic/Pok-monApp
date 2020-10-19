@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import "./fonts.css";
 import "./style.css";
+import TradingCard from "./components/tradingCard";
+
+
 
 const element = <h1>Pokéshop</h1>;
 
@@ -21,7 +24,7 @@ function PokemonList() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=10&offset=20")
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=50&offset=0")
       .then(res => res.json())
       .then(
         (result) => {
@@ -44,14 +47,9 @@ function PokemonList() {
     return (
       <div>
         <div>{count}</div>
-        <ul>
-          {items.map(item => (
-            <li key={item.name}>
-              <span>{item.name}</span> 
-              <img src={getPokeUrl(item.url)} alt={item.name} />
-            </li>
-          ))}
-        </ul>
+        {items.map(item => (
+          <TradingCard name={item.name} image={getPokeUrl(item.url)} />
+          ))}        
       </div>
     );
   }
@@ -72,7 +70,7 @@ export default function App() {
     <div>
     {element}
     <PokemonList />
-    <Uha />
+    <Uha />    
       <h1>Hello StackBlitz!</h1>
       <p>Start editing to see some magic happen :)</p>
     </div>
