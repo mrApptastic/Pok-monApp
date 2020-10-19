@@ -9,9 +9,12 @@
 
 body {
   background: var(--quaternary);
+  color: var(--senary);
 }
 
-h1,
-p {
-  font-family: monospace;
+h1 {
+  font-size: 4rem;
+  color: var(--quinary);
+  text-shadow: 5px 5px 0px var(--senary) 
 }
+

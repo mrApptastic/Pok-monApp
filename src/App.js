@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "./fonts.css";
 import "./style.css";
 
-const element = <h1>Hello, world!</h1>;
+const element = <h1>Pokéshop</h1>;
 
 function getPokeUrl(url) {
   let number = url.replace('https://pokeapi.co/api/v2/pokemon/','').replace('/','');
@@ -14,7 +14,7 @@ function getPokeUrl(url) {
   return "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + number + ".png";
 }
 
-function MyComponent() {
+function PokemonList() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
@@ -71,7 +71,7 @@ export default function App() {
   return (    
     <div>
     {element}
-    <MyComponent />
+    <PokemonList />
     <Uha />
       <h1>Hello StackBlitz!</h1>
       <p>Start editing to see some magic happen :)</p>
