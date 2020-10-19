@@ -1,5 +1,14 @@
+:root {
+  --primary: #EF5350; 
+  --secondary: #263238; 
+  --tertiary: #EBF5F0; 
+  --quaternary: #FFFFFF; 
+  --quinary: #FECA1B; 
+  --senary: #3761A8; 
+}
+
 body {
-  background: blue;
+  background: var(--quaternary);
 }
 
 h1,
