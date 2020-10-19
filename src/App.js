@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import "./fonts.css";
 import "./style.css";
 
 const element = <h1>Hello, world!</h1>;
