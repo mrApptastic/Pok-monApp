@@ -12,13 +12,15 @@ function getPokeUrl(url) {
 }
 
 function PokemonListView() {
+  const pagesize = 50;
+  const offset = 1;
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=50&offset=0")
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=" + pagesize+ "&offset=" + offset)
       .then(res => res.json())
       .then(
         (result) => {
@@ -39,12 +41,12 @@ function PokemonListView() {
     return <div>Loading...</div>;
   } else {
     return (
-      <section class="container-fluid">
+      <section className="container-fluid">
         <h2>Pokémon</h2>
         <div>{count}</div>
-        <div class="row">
+        <div className="row">
           {items.map(item => (
-            <div className="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+            <div key={item.name} className="col-lg-2 col-md-3 col-sm-4 col-xs-6">
                 <TradingCard name={item.name} image={getPokeUrl(item.url)} />
             </div>         
             ))}
@@ -54,9 +56,8 @@ function PokemonListView() {
   }
 }
 
-
-
 class PokemonList extends React.Component {
+
     render() {
       return <PokemonListView />
     }

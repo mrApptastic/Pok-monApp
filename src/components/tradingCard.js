@@ -14,8 +14,8 @@ const cardBody = <div class="infobox">
 class TradingCard extends React.Component {
   render() {
     return <div>
-        <h3 class="pokemonName">{this.props.name}</h3>
-        <img class="pokemonPicture" src={this.props.image} alt={this.props.name} />
+        <h3 className="pokemonName">{this.props.name}</h3>
+        <img className="pokemonPicture" src={this.props.image} alt={this.props.name} />
       </div>
   }
 }
