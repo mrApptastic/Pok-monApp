@@ -3,8 +3,7 @@ import "./styles/reset.css";
 import "./styles/fonts.css";
 import "./styles/style.css";
 import TradingCard from "./components/tradingCard";
-
-
+import Header from "./components/header";
 
 const element = <h1>Pokéshop</h1>;
 
@@ -69,7 +68,7 @@ function Uha() {
 export default function App() {
   return (    
     <div>
-    {element}
+    <Header title="PokéShop" extra="- gotta buy 'em all!" />
     <PokemonList />
     <Uha />    
       <h1>Hello StackBlitz!</h1>
