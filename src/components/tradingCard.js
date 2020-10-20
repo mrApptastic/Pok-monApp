@@ -12,12 +12,12 @@ const cardBody = <div class="infobox">
 </div>;
 
 class TradingCard extends React.Component {
-    render() {
-      return <div class="tradingcard">
-          <h3 class="pokemonName">{this.props.name}</h3>
-          <img class="pokemonPicture" src={this.props.image} alt={this.props.name} />
+  render() {
+    return <div>
+        <h3 class="pokemonName">{this.props.name}</h3>
+        <img class="pokemonPicture" src={this.props.image} alt={this.props.name} />
       </div>
-    }
   }
+}
 
-  export default TradingCard;
+export default TradingCard;

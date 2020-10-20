@@ -70,3 +70,7 @@ h3.pokemonName {
 span {
   font-weight: bold;
 }
+
+header.jumbotron, footer.jumbotron {
+  background: var(--primary);
+}
