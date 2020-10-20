@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import "./fonts.css";
-import "./style.css";
+import "./styles/fonts.css";
+import "./styles/style.css";
 import TradingCard from "./components/tradingCard";
 
 
