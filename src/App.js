@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import "./styles/reset.css";
 import "./styles/fonts.css";
 import "./styles/style.css";
 import TradingCard from "./components/tradingCard";
