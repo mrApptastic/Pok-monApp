@@ -71,6 +71,10 @@ span {
   font-weight: bold;
 }
 
+div.filterBox {
+  margin-bottom: 2rem;
+}
+
 header.jumbotron, footer.jumbotron {
   background: var(--primary);
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PokemonFilter from "./pokemonFilter";
 import PokemonView from "./pokemonView";
 
 function getPokeUrl(url) {
@@ -42,6 +43,7 @@ function PokemonListView() {
   } else {
     return (
       <section className="container-fluid">
+        <PokemonFilter />
         <div className="row">
           {items.map(item => (
             <div key={item.name} className="pokeyItem col-lg-2 col-md-3 col-sm-4 col-xs-6">
