@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import TradingCard from "./tradingCard";
+import PokemonView from "./pokemonView";
 
 function getPokeUrl(url) {
   let number = url.replace('https://pokeapi.co/api/v2/pokemon/','').replace('/','');
@@ -12,7 +12,7 @@ function getPokeUrl(url) {
 }
 
 function PokemonListView() {
-  const pagesize = 1100;
+  const pagesize = 893;
   const offset = 0;
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -42,12 +42,10 @@ function PokemonListView() {
   } else {
     return (
       <section className="container-fluid">
-        <h2>Pokémon</h2>
-        <div>{count}</div>
         <div className="row">
           {items.map(item => (
-            <div key={item.name} className="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-                <TradingCard name={item.name} image={getPokeUrl(item.url)} />
+            <div key={item.name} className="pokeyItem col-lg-2 col-md-3 col-sm-4 col-xs-6">
+                <PokemonView name={item.name} image={getPokeUrl(item.url)} />
             </div>         
             ))}
         </div>

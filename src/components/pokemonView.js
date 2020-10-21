@@ -1,12 +1,12 @@
 import React from 'react';
 
-class Header extends React.Component {
+class PokemonView extends React.Component {
     render() {
-      return <header className="jumbotron">
-          <h1>{this.props.title}</h1><br/>
-          <h3>{this.props.extra}</h3>
-      </header>
+      return <div>
+      <h3 className="pokemonName">{this.props.name}</h3>
+      <img className="pokemonPicture" src={this.props.image} alt={this.props.name} />
+    </div>
     }
   }
 
-  export default Header;
+  export default PokemonView;
