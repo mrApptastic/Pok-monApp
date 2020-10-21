@@ -1,23 +1,27 @@
 import React from 'react';
 
+function filterList() {
+  const val = document.getElementById("pokeySearch").value.toLowerCase();
+  const list = document.getElementsByClassName("pokeyItem");
+  for (const item of list) {
+    const name = item.getElementsByClassName("pokemonName")[0].innerHTML.toLowerCase();
+
+    if (val.length === 0 || name.indexOf(val) !== -1) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  }
+}
 
 class PokemonFilter extends React.Component {
-  constructor (props) {
-    super(props);
-    this.filterList = this.filterList.bind(this);
+  handleClick() {
+    filterList();
   }
 
-  filterList() {
-    const val = document.getElementById("pokeySearch").value.toLowerCase();
-    const list = document.getElementsByClassName("pokeyItem");
-    for (const item of list) {
-      const name = item.getElementsByClassName("pokemonName")[0].innerHTML.toLowerCase();
-
-      if (val.length === 0 || name.indexOf(val) !== -1) {
-        item.style.display = "block";
-      } else {
-        item.style.display = "none";
-      }
+  handleKeyUp(e) {
+    if (e.keyCode === 13) {
+      filterList();
     }
   }
 
@@ -25,10 +29,10 @@ class PokemonFilter extends React.Component {
       return <div className="filterBox row">
         <div className="col-md-2"></div>
         <div className="col-md-6">
-          <input id="pokeySearch" className="form-control" type="text" placeholder="PokéFilter" />
+          <input id="pokeySearch" className="form-control" type="text" onKeyUp={this.handleKeyUp} placeholder="PokéFilter" />
         </div>
         <div className="col-md-2">
-          <button className="btn btn-success" type="button" onClick={this.filterList}>
+          <button className="btn btn-success" type="button" onClick={this.handleClick}>
             Filter
           </button>
         </div>     
