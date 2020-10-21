@@ -12,8 +12,8 @@ function getPokeUrl(url) {
 }
 
 function PokemonListView() {
-  const pagesize = 50;
-  const offset = 1;
+  const pagesize = 1100;
+  const offset = 0;
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
@@ -50,7 +50,7 @@ function PokemonListView() {
                 <TradingCard name={item.name} image={getPokeUrl(item.url)} />
             </div>         
             ))}
-        </div>     
+        </div>
       </section>
     );
   }
