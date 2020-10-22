@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import PokemonFilter from "./pokemonFilter";
+import PokeSpinner from "./pokeSpinner";
 import PokemonView from "./pokemonView";
+import PokeDetails from "./pokeDetails";
 
 function getPokeUrl(url) {
   let number = url.replace('https://pokeapi.co/api/v2/pokemon/','').replace('/','');
 
-  while (number.length < 3) {
-    number = "0" + number;
-  }
+  // while (number.length < 3) {
+  //   number = "0" + number;
+  // }
 
-  return "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + number + ".png";
+  // "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" 
+  return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/" + number + ".png";
 }
 
 function PokemonListView() {
-  const pagesize = 893;
+  const pagesize = 721;
   const offset = 0;
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -25,7 +28,7 @@ function PokemonListView() {
       .then(res => res.json())
       .then(
         (result) => {
-          setIsLoaded(true);
+          setIsLoaded(true);          
           setItems(result.results);
           setCount(result.count);
         },
@@ -39,7 +42,7 @@ function PokemonListView() {
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <PokeSpinner />;
   } else {
     return (
       <section className="container-fluid">
@@ -47,10 +50,11 @@ function PokemonListView() {
         <div className="row">
           {items.map(item => (
             <div key={item.name} className="pokeyItem col-lg-2 col-md-3 col-sm-4 col-xs-6">
-                <PokemonView name={item.name} image={getPokeUrl(item.url)} />
+                <PokemonView name={item.name} url={item.url} image={getPokeUrl(item.url)} />
             </div>         
             ))}
         </div>
+        <PokeDetails />
       </section>
     );
   }
