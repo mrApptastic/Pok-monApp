@@ -13,7 +13,7 @@
 @media screen and (max-width: 485px) {	:root { font-size: 10px; } }
 
 body {
-  background: var(--quaternary);
+  background: var(--tertiary);
   color: var(--senary);
 }
 
@@ -30,6 +30,7 @@ h3.pokemonName {
   color: var(--quinary);
   text-shadow: 2px 2px 0 var(--senary);
   text-transform: capitalize;
+  cursor: pointer;
 }
 
 .tradingcard {
@@ -56,6 +57,7 @@ h3.pokemonName {
   height: auto;
   width: 100%;
   padding-bottom: .8em;
+  cursor: pointer;
 }
 
 .funfact {
@@ -77,4 +79,52 @@ div.filterBox {
 
 header.jumbotron, footer.jumbotron {
   background: var(--primary);
+}
+
+footer {
+  bottom: 0;
+}
+
+.centerBox {
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.spinner {
+  position: fixed;
+  z-index: 999;
+  min-height: 50vh;
+  min-width: 100vw;
+}
+
+.spinner div img {
+  height: 10rem;
+  width: auto;
+}
+
+.spinner:nth-of-type(1) {
+  min-height: calc(60vh);
+}
+
+.spinner:nth-of-type(2) {
+  min-height: calc(70vh);
+}
+
+.spinner:nth-of-type(3) {
+  min-height: calc(80vh);
+}
+
+.spinner:nth-of-type(4) {
+  min-height: calc(90vh);
+}
+
+.spinner:nth-of-type(5) {
+  min-height: calc(90vh);
+}
+
+.pokeyButton {
+  color: var(--quaternary);
+  background: var(--primary);
+  font-family: "Pokemon";
 }

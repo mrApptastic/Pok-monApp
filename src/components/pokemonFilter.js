@@ -32,7 +32,7 @@ class PokemonFilter extends React.Component {
           <input id="pokeySearch" className="form-control" type="text" onKeyUp={this.handleKeyUp} placeholder="PokéFilter" />
         </div>
         <div className="col-md-2">
-          <button className="btn btn-success" type="button" onClick={this.handleClick}>
+          <button className="btn pokeyButton" type="button" onClick={this.handleClick}>
             Filter
           </button>
         </div>     

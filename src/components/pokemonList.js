@@ -42,14 +42,14 @@ function PokemonListView() {
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <PokeSpinner />;
+    return <PokeSpinner text="Loading Pokémon" />;
   } else {
     return (
       <section className="container-fluid">
         <PokemonFilter />
         <div className="row">
           {items.map(item => (
-            <div key={item.name} className="pokeyItem col-lg-2 col-md-3 col-sm-4 col-xs-6">
+            <div key={item.name} className="pokeyItem col-lg-2 col-md-3 col-sm-4 col-6">
                 <PokemonView name={item.name} url={item.url} image={getPokeUrl(item.url)} />
             </div>         
             ))}
