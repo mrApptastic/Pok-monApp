@@ -3,6 +3,7 @@ import "./styles/reset.css";
 import "./styles/fonts.css";
 import "./styles/style.css";
 import "./styles/animations.css";
+import Navigation from "./components/navigation";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import MainView from "./components/mainView";
@@ -22,6 +23,7 @@ function MainBox() {
 export default function App() {
   return (    
     <div>
+      <Navigation></Navigation>
       <Header title="PokéShop" extra="- gotta buy 'em all!" />   
       <MainBox/> 
       <Footer />      
