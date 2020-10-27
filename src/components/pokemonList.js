@@ -28,8 +28,20 @@ function PokemonListView() {
       .then(res => res.json())
       .then(
         (result) => {
-          setIsLoaded(true);          
-          setItems(result.results);
+          setIsLoaded(true); 
+          const list = result.results.sort(function(a, b) {
+            var nameA = a.name.toUpperCase();
+            var nameB = b.name.toUpperCase();
+            if (nameA < nameB) {
+              return -1;
+            }
+            if (nameA > nameB) {
+              return 1;
+            }
+
+            return 0;
+          });         
+          setItems(list);
           setCount(result.count);
         },
         (error) => {
@@ -45,7 +57,7 @@ function PokemonListView() {
     return <PokeSpinner text="Loading Pokémon" />;
   } else {
     return (
-      <section className="container-fluid">
+      <section id="pokemonList" className="container-fluid">
         <PokemonFilter />
         <div className="row">
           {items.map(item => (

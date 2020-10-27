@@ -2,36 +2,35 @@ import React from 'react';
 
 class Navigation extends React.Component {
     render() {
-      return <nav className="navbar navbar-inverse">
-      <div className="container-fluid">
-        <div className="navbar-header">
-          <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>                        
-          </button>
-          <a className="navbar-brand" href="#">WebSiteName</a>
-        </div>
-        <div className="collapse navbar-collapse" id="myNavbar">
-          <ul className="nav navbar-nav">
-            <li className="active"><a href="#">Home</a></li>
-            <li className="dropdown">
-              <a className="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span className="caret"></span></a>
-              <ul className="dropdown-menu">
-                <li><a href="#">Page 1-1</a></li>
-                <li><a href="#">Page 1-2</a></li>
-                <li><a href="#">Page 1-3</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Page 2</a></li>
-            <li><a href="#">Page 3</a></li>
-          </ul>
-          <ul className="nav navbar-nav navbar-right">
-            <li><a href="#"><span className="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#"><span className="glyphicon glyphicon-log-in"></span> Login</a></li>
-          </ul>
-        </div>
-      </div>
+      return <nav className="navbar navbar-expand-sm navbar-dark fixed-top">
+      <a className="navbar-brand" href="#">PokéShop</a>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span>
+          <i class="fa fa-bars" aria-hidden="true"></i>
+        </span>
+      </button>
+      <div className="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <a className="nav-link" href="#pokemonList">Pokémon</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#itemList">Items</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#pokePong">PokéPong</a>
+          </li>    
+          <li className="nav-item">
+            <a className="nav-link" href="#pokePaint">PokéPainter</a>
+          </li>  
+          <li className="nav-item">
+            <a className="nav-link" href="#cart">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              <span style={{marginLeft: '8px'}} >Cart</span>              
+            </a>
+          </li>  
+        </ul>
+      </div>  
     </nav>
     }
   }

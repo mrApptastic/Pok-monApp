@@ -7,14 +7,41 @@ function ItemsListView() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
+  const excludeList = new Array();
+
+  excludeList.push("hm08");
+
+  for (let i = 0; i <= 100; i++) {
+    let j = i.toString();
+
+    while (j.length < 2) {
+      j = "0" + j;
+    }
+
+    excludeList.push("tm" + j);
+  }
 
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/item?limit=" + pagesize+ "&offset=" + offset)
       .then(res => res.json())
       .then(
         (result) => {
-          setIsLoaded(true);          
-          setItems(result.results);
+          setIsLoaded(true);      
+          let items = result.results;
+          items = items.filter(x => excludeList.indexOf(x.name) === -1).sort(function(a, b) {
+            var nameA = a.name.toUpperCase();
+            var nameB = b.name.toUpperCase();
+            if (nameA < nameB) {
+              return -1;
+            }
+            if (nameA > nameB) {
+              return 1;
+            }
+
+            return 0;
+          });
+
+          setItems(items);
         },
         (error) => {
           setIsLoaded(true);
@@ -29,7 +56,7 @@ function ItemsListView() {
     return <PokeSpinner text="Loading Items" />;
   } else {
     return (
-      <section className="container-fluid">
+      <section id="itemList" className="container-fluid">
         <div className="row">
           {items.map(item => (
             <div key={item.name} className="col-lg-2 col-md-3 col-sm-4 col-6">
