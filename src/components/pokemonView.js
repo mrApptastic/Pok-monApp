@@ -23,9 +23,9 @@ class PokemonView extends React.Component {
   }
 
   render() {
-      return <div onClick={() => { this.handleClick(this.props.url) }}>
-      <h3 className="pokemonName">{this.props.name}</h3>
+      return <div onClick={() => { this.handleClick(this.props.url) }}>      
       <img className="pokemonPicture" src={this.props.image} alt={this.props.name} />
+      <h3 className="pokemonName text-center">{this.props.name}</h3>
     </div>
     }
   }

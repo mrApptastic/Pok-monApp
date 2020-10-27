@@ -59,7 +59,6 @@ button:focus {
   outline: none;
 }
 
-/* Trading Card */
 h3.pokemonName {
   font-size: 2rem;
   letter-spacing: 0.25rem;
@@ -69,26 +68,6 @@ h3.pokemonName {
   cursor: pointer;
 }
 
-.tradingcard {
-  margin-left: 0;
-  margin-right: 2%;
-  padding: 0;
-  width: 18%;
-  float: left;
-  border: 1px solid var(--quinary);
-  box-shadow: 6px 6px 1px 0px var(--tertiary);
-  padding-right: .2em;
-  padding-left: .7em;
-  padding-bottom: .6em;
-}
-
-.infobox {
-  width: 283px;
-  border: 1px solid #DCDCDC;
-  padding-right: .5em;
-  padding-left: .5em;
-}
-
 .pokemonPicture {
   height: auto;
   width: 100%;
@@ -96,15 +75,6 @@ h3.pokemonName {
   cursor: pointer;
 }
 
-.funfact {
-  font-style: italic;
-}
-
-.list-info{
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
 span {
   font-weight: bold;
 }
