@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import * as cart from '../functions/cartHandler';
 
 function loadItem(val) {
+  cart.addItem("geg");
   fetch(val)
   .then(res => res.json())
   .then(
-    (result) => {
+    (result) => {      
       console.log(result);
       document.getElementById("pokeShowName").innerHTML = result.name;
       document.getElementById("pokeShow").click();

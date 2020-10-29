@@ -6,7 +6,7 @@ class Navigation extends React.Component {
       <a className="navbar-brand" href="#">PokéShop</a>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span>
-          <i class="fa fa-bars" aria-hidden="true"></i>
+          <i className="fa fa-bars" aria-hidden="true"></i>
         </span>
       </button>
       <div className="collapse navbar-collapse" id="collapsibleNavbar">
@@ -25,7 +25,7 @@ class Navigation extends React.Component {
           </li>  
           <li className="nav-item">
             <a className="nav-link" href="#cart">
-              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              <i className="fa fa-shopping-cart" aria-hidden="true"></i>
               <span style={{marginLeft: '8px'}} >Cart</span>              
             </a>
           </li>  
