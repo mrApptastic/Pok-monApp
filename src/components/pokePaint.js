@@ -7,7 +7,7 @@ setTimeout(() => {
 
 class PokePaint extends React.Component {
     render() {
-      return <div id="pokePaint" className="container">
+      return <div id="pokePaint" className="container pokeSection">
             <h2>PokéPaint</h2>
             <div className="row">
                 <div className="col-sm-2">

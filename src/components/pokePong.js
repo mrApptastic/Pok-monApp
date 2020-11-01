@@ -7,7 +7,7 @@ setTimeout(() => {
 
 class PokePong extends React.Component {
     render() {
-      return <canvas id="pokePong"></canvas>
+      return <canvas id="pokePong" className="pokeSection"></canvas>
     }
   }
 

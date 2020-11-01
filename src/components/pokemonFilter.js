@@ -26,17 +26,11 @@ class PokemonFilter extends React.Component {
   }
 
   render() {
-      return <div className="filterBox row">
-        <div className="col-md-2"></div>
-        <div className="col-md-6">
+      return <div className="filterBox">
           <input id="pokeySearch" className="form-control" type="text" onKeyUp={this.handleKeyUp} placeholder="PokéFilter" />
-        </div>
-        <div className="col-md-2">
           <button className="btn pokeyButton" type="button" onClick={this.handleClick}>
             Filter
-          </button>
-        </div>     
-        <div className="col-md-2"></div>
+          </button>     
       </div>
     }
   }

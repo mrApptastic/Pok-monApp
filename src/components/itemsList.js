@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import PokeSpinner from "./pokeSpinner";
+import PokemonView from "./pokemonView";
+
+function getItemUrl(name) {
+  return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/" + name + ".png";
+}
 
 function ItemsListView() {
   const pagesize = 954;
@@ -56,12 +61,11 @@ function ItemsListView() {
     return <PokeSpinner text="Loading Items" />;
   } else {
     return (
-      <section id="itemList" className="container-fluid">
+      <section id="itemList" className="container-fluid pokeSection">
         <div className="row">
           {items.map(item => (
-            <div key={item.name} className="col-lg-2 col-md-3 col-sm-4 col-6">
-              <h3 className="pokemonName">{item.name}</h3>
-              <img className="pokemonPicture" src={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/' + item.name + '.png'} alt={item.name} />
+            <div key={item.name} className="pokeyItem col-lg-2 col-md-3 col-sm-4 col-6">              
+              <PokemonView name={item.name} url={item.url} image={getItemUrl(item.name)} />
           </div>        
           ))}
         </div>

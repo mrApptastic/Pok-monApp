@@ -9,8 +9,8 @@ import PokeDetails from "./pokeDetails";
 class MainView extends React.Component {
     render() {
       return <div>
-        {/* <PokemonList />
-        <ItemsList /> */}
+        <PokemonList />
+        <ItemsList />
         <PokePong />
         <PokePaint />
         <Cart />

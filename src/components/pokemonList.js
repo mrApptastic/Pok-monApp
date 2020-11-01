@@ -55,7 +55,7 @@ function PokemonListView() {
     return <PokeSpinner text="Loading Pokémon" />;
   } else {
     return (
-      <section id="pokemonList" className="container-fluid">
+      <section id="pokemonList" className="container-fluid pokeSection">
         <div className="row">
           {items.map(item => (
             <div key={item.name} className="pokeyItem col-lg-2 col-md-3 col-sm-4 col-6">
