@@ -135,3 +135,13 @@ footer {
   background: var(--primary);
   font-family: "Pokemon";
 }
+
+#cartCount {
+  font-size: 0.75rem;
+  top: -1rem;
+  position: relative;
+}
+
+canvas {
+  background: var(--quaternary);
+}

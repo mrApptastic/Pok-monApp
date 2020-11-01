@@ -7,6 +7,11 @@ import Navigation from "./components/navigation";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import MainView from "./components/mainView";
+import * as cart from './functions/cartHandler';
+
+setTimeout(() => {
+  cart.updateCartViews();
+}, 0);
 
 function MainBox() {
   const [step, setStep] = useState(0);

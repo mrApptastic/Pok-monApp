@@ -32,6 +32,7 @@ class Navigation extends React.Component {
           <li className="nav-item">
             <a className="nav-link" href="#cart">
               <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+              <span id="cartCount"></span>
               <span style={{marginLeft: '8px'}} >Cart</span>              
             </a>
           </li>  
