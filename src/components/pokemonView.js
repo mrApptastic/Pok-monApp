@@ -2,13 +2,16 @@ import React, { useState, useEffect } from 'react';
 import * as cart from '../functions/cartHandler';
 
 function loadItem(val) {
-  cart.addItem("geg");
   fetch(val)
   .then(res => res.json())
   .then(
     (result) => {      
-      console.log(result);
       document.getElementById("pokeShowName").innerHTML = result.name;
+      
+      let content = document.getElementById("pokeContent");
+      
+      content.innerHTML = "";
+      
       document.getElementById("pokeShow").click();
 
     },
@@ -20,14 +23,19 @@ function loadItem(val) {
 
 class PokemonView extends React.Component {  
 
+  addToCart(val) {
+    cart.addItem(val);
+  }
+
   handleClick(val) {
     loadItem(val);
   }
 
   render() {
-      return <div onClick={() => { this.handleClick(this.props.url) }}>      
-      <img className="pokemonPicture" src={this.props.image} alt={this.props.name} />
+      return <div>
+      <button className="btn pokeyButton btn-sm pull-right" onClick={() => { this.addToCart(this.props) }}>Buy</button>     
       <h3 className="pokemonName text-center">{this.props.name}</h3>
+      <img className="pokemonPicture" src={this.props.image} alt={this.props.name} title={"Click for " + this.props.name.toUpperCase() + " details"} onClick={() => { this.handleClick(this.props.url) }} />
     </div>
     }
   }

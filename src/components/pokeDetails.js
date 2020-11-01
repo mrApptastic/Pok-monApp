@@ -8,12 +8,10 @@ class PokeDetails extends React.Component {
             <div className="modal-dialog">
                 <div className="modal-content">
                 <div className="modal-header">
-                    <h4 id="pokeShowName" className="modal-title"></h4>
+                    <h4 id="pokeShowName" className="modal-title text-capitalize"></h4>
                     <button type="button" className="close" data-dismiss="modal">&times;</button>                    
                 </div>
-                <div className="modal-body">
-                    <p>Some text in the modal.</p>
-                </div>
+                <div id="pokeContent" className="modal-body"></div>
                 <div className="modal-footer">
                     <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
                 </div>

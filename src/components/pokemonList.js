@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import PokemonFilter from "./pokemonFilter";
 import PokeSpinner from "./pokeSpinner";
 import PokemonView from "./pokemonView";
-import PokeDetails from "./pokeDetails";
 
 function getPokeUrl(url) {
   let number = url.replace('https://pokeapi.co/api/v2/pokemon/','').replace('/','');
@@ -58,7 +56,6 @@ function PokemonListView() {
   } else {
     return (
       <section id="pokemonList" className="container-fluid">
-        <PokemonFilter />
         <div className="row">
           {items.map(item => (
             <div key={item.name} className="pokeyItem col-lg-2 col-md-3 col-sm-4 col-6">
@@ -66,7 +63,6 @@ function PokemonListView() {
             </div>         
             ))}
         </div>
-        <PokeDetails />
       </section>
     );
   }

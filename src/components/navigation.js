@@ -1,4 +1,5 @@
 import React from 'react';
+import PokemonFilter from "./pokemonFilter";
 
 class Navigation extends React.Component {
     render() {
@@ -10,7 +11,7 @@ class Navigation extends React.Component {
         </span>
       </button>
       <div className="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul className="navbar-nav">
+        <ul className="navbar-nav mr-auto">
           <li className="nav-item">
             <a className="nav-link" href="#pokemonList">Pokémon</a>
           </li>
@@ -22,7 +23,12 @@ class Navigation extends React.Component {
           </li>    
           <li className="nav-item">
             <a className="nav-link" href="#pokePaint">PokéPainter</a>
-          </li>  
+          </li>   
+        </ul>
+        <ul className="navbar-nav ml-auto">
+          <li>
+            <PokemonFilter />
+          </li>
           <li className="nav-item">
             <a className="nav-link" href="#cart">
               <i className="fa fa-shopping-cart" aria-hidden="true"></i>

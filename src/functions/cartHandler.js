@@ -1,6 +1,7 @@
 const cartKey = "pokeCart";
 
 export function addItem(item) {
+    console.log(item);
     const cart = getCart();
 
     if (cart.some(x => x?.item?.name === item?.name)) {
