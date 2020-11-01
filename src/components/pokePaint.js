@@ -7,13 +7,13 @@ setTimeout(() => {
 
 class PokePaint extends React.Component {
     render() {
-      return <div id="pokePaint" className="container pokeSection">
+      return <div id="pokePaint" className="container-fluid pokeSection">
             <h2>PokéPaint</h2>
             <div className="row">
                 <div className="col-sm-2">
                     <div id="pokeTools"></div>
                 </div>
-                <div className="col-sm-10">¨
+                <div className="col-sm-10" style={{ overflow: 'hidden' }}>
                     <canvas id="pokeCanvas"></canvas>
                 </div>
             </div>

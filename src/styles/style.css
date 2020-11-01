@@ -23,6 +23,13 @@ h1 {
   text-shadow: 5px 5px 0px var(--senary) 
 }
 
+h2 {
+  font-size: 3rem;
+  color: var(--quinary);
+  text-shadow: 5px 5px 0px var(--senary) 
+}
+
+
 .navbar-dark {
   background: var(--primary);
   font-family: 'Pokemon';
@@ -144,4 +151,28 @@ footer {
 
 canvas {
   background: var(--quaternary);
+}
+
+#pokePaint h1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+#pokePaint label, 
+#pokePaint input,
+#pokePaint select, 
+#pokePaint span {
+  font-family: 'Pokemon';
+  font-size: 0.75rem;
+}
+
+#pokePaint input,
+#pokePaint select {
+  height: 2rem;
+  color: var(--primary);
+}
+
+#cart h2 {
+  margin-bottom: 2rem;
 }

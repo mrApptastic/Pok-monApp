@@ -13,7 +13,7 @@ export function captainCanvas (canvas, tools, settings) {
                 "evt" : settings ? (settings.DefaultEvents !== null ? settings.DefaultEvents : true) : true,
 				"cls" : settings ? (settings.Colours !== null ? settings.Colours : []) : [],
 				"clw" : settings ? (settings.OverwriteColours !== null ? settings.OverwriteColours : false) : false,
-				"lan" : window.navigator.language.indexOf("da") !== -1,
+				"lan" : false,
 				"foc" : false
 			  };
 	cpt.methods = ["Firkant (Fyld)","Firkant (Streg)", "Firkant", "Cirkel", "Stjerne", "Trekant", "Trekant (Ret)", "Rhombe", "Trapezoid", "Ellipse", "Smiley", "Hjerte", "Linie", "Figur (Linie)"];

@@ -35,22 +35,41 @@ export function setCart(cart) {
     sessionStorage.setItem(cartKey, JSON.stringify(cart));
 }
 
+export function getCount(cart) {
+    let count = 0;
+
+    for (const item of cart) {
+        count += item.count;
+    }
+
+    return count;
+}
+
+export function buyEmAll() {
+    setCart(new Array);
+    updateCartViews();
+    const price = Math.ceil(Math.random() * 100000);
+    alert(price + "PokéDollars have been withdrawn from your account. Happy catching! See you next time at Pokéshop!");
+}
+
 export function updateCartViews() {
     const count = document.getElementById("cartCount");
     const cartItems = document.getElementById("cartItems");
+    const buyButton = document.getElementById("buyEmAll");
     const cart = getCart();
-    console.log(cart);
 
     if (cart.length > 0) {
-        count.innerHTML = cart.length;
-        cartItems.innerHTML = "<ul>";
+        count.innerHTML = getCount(cart);
+        cartItems.innerHTML = "<ul class='list-group'>";
         for (const item of cart) {
-            cartItems.innerHTML += "<li>" + item.count  + " " + item.name + (item.count > 1 ? "s" : "") + "</li>"
+            cartItems.innerHTML += "<li class='list-group-item'>" + item.count  + " " + item.name + (item.count > 1 ? "s" : "") + "</li>"
         }
         cartItems.innerHTML += "</ul>"
+        buyButton.style.display = "block";
 
     } else {
         count.innerHTML = "";
-        cartItems.innerHTML = "";
+        cartItems.innerHTML = "<h3 class='text-center mb-2'>The cart is empty :-(</h3>";
+        buyButton.style.display = "none";
     }
 }
