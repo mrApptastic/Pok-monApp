@@ -49,7 +49,7 @@ export function buyEmAll() {
     setCart(new Array);
     updateCartViews();
     const price = Math.ceil(Math.random() * 100000);
-    alert(price + "PokéDollars have been withdrawn from your account. Happy catching! See you next time at Pokéshop!");
+    alert(price + " PokéDollars have been withdrawn from your account. Happy catching! See you next time at Pokéshop!");
 }
 
 export function updateCartViews() {
@@ -62,7 +62,7 @@ export function updateCartViews() {
         count.innerHTML = getCount(cart);
         cartItems.innerHTML = "<ul class='list-group'>";
         for (const item of cart) {
-            cartItems.innerHTML += "<li class='list-group-item'>" + item.count  + " " + item.name + (item.count > 1 ? "s" : "") + "</li>"
+            cartItems.innerHTML += "<li class='list-group-item text-capitalize'>" + item.count  + " " + item.name + (item.count > 1 ? "s" : "") + "</li>"
         }
         cartItems.innerHTML += "</ul>"
         buyButton.style.display = "block";

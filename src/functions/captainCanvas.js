@@ -9,7 +9,7 @@ export function captainCanvas (canvas, tools, settings) {
 	cpt.settings = {
 				"fit" : settings ? (settings.Fit !== null ? settings.Fit : true) : true,
 				"tog" : settings ? (settings.Toggle !== null ? settings.Toggle : true) : false,
-                "key" : settings ? (settings.Shortcuts !== null ? settings.Shortcuts : true) : true,
+                "key" : settings ? (settings.Shortcuts !== null ? settings.Shortcuts : true) : false,
                 "evt" : settings ? (settings.DefaultEvents !== null ? settings.DefaultEvents : true) : true,
 				"cls" : settings ? (settings.Colours !== null ? settings.Colours : []) : [],
 				"clw" : settings ? (settings.OverwriteColours !== null ? settings.OverwriteColours : false) : false,
